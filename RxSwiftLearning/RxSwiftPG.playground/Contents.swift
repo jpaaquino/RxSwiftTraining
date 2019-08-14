@@ -95,3 +95,36 @@ relay.asObservable().subscribe({
     print($0)
 })
 
+//Ignore
+//Ignores elements but not onCompleted
+
+let strike = PublishSubject<String>()
+let bag = DisposeBag()
+strike.ignoreElements().subscribe {
+    _ in
+    print("Subscription called")
+}.disposed(by: bag)
+
+strike.onNext("A")
+strike.onNext("B")
+strike.onNext("C")
+strike.onCompleted()
+
+//ElementAt
+strike.elementAt(2).subscribe {
+    _ in
+    print("You're out")
+}.disposed(by: bag)
+
+strike.onNext("1")
+strike.onNext("2")
+strike.onNext("3")// Only called here
+strike.onNext("4")
+strike.onNext("5")
+
+//Filter
+Observable.of(1,2,3,4,76,77).filter {
+    $0 % 2 == 0
+}.subscribe(onNext: {
+    print($0)
+    }).disposed(by: bag)
