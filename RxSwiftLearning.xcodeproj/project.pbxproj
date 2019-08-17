@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0BB397127BF388C5671CC444 /* Pods_RxSwiftLearningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77985D7244944BFF1A361A8E /* Pods_RxSwiftLearningTests.framework */; };
 		341DFD13934BA58C14B98126 /* Pods_RxSwiftLearningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9325C734726FC6B08FE5290A /* Pods_RxSwiftLearningUITests.framework */; };
+		3F3B7D962307EB2F00468C83 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B7D952307EB2F00468C83 /* TaskListViewController.swift */; };
+		3F3B7D982307EF2400468C83 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B7D972307EF2400468C83 /* AddTaskViewController.swift */; };
+		3F3B7D9A2307F33E00468C83 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3B7D992307F33E00468C83 /* Task.swift */; };
 		3FE02CDD22FF5A0F0009CE59 /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE02CDC22FF5A0F0009CE59 /* PhotosVC.swift */; };
 		3FE02CDF22FF5FDF0009CE59 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE02CDE22FF5FDF0009CE59 /* PhotoCollectionViewCell.swift */; };
 		3FE02CE122FFB80C0009CE59 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE02CE022FFB80C0009CE59 /* FilterService.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		0939AE1C87F5226C4E9EBA24 /* Pods-RxSwiftLearningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftLearningTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftLearningTests/Pods-RxSwiftLearningTests.release.xcconfig"; sourceTree = "<group>"; };
 		1EBF4641DD53DF4C77C0E452 /* Pods-RxSwiftLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftLearning/Pods-RxSwiftLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		3F3B7D952307EB2F00468C83 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		3F3B7D972307EF2400468C83 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		3F3B7D992307F33E00468C83 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3F5DB87522FF07FE000E819C /* RxSwiftPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3FE02CDC22FF5A0F0009CE59 /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
 		3FE02CDE22FF5FDF0009CE59 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		3FEC266022F639F500266E7D /* RxSwiftLearning */ = {
 			isa = PBXGroup;
 			children = (
+				3F3B7D992307F33E00468C83 /* Task.swift */,
 				3F5DB87522FF07FE000E819C /* RxSwiftPG.playground */,
 				3FEC266122F639F500266E7D /* AppDelegate.swift */,
 				3FEC266322F639F500266E7D /* ViewController.swift */,
@@ -141,6 +148,8 @@
 				3FE02CDC22FF5A0F0009CE59 /* PhotosVC.swift */,
 				3FE02CDE22FF5FDF0009CE59 /* PhotoCollectionViewCell.swift */,
 				3FE02CE022FFB80C0009CE59 /* FilterService.swift */,
+				3F3B7D952307EB2F00468C83 /* TaskListViewController.swift */,
+				3F3B7D972307EF2400468C83 /* AddTaskViewController.swift */,
 			);
 			path = RxSwiftLearning;
 			sourceTree = "<group>";
@@ -406,11 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3B7D9A2307F33E00468C83 /* Task.swift in Sources */,
 				3FEC266422F639F500266E7D /* ViewController.swift in Sources */,
 				3FE02CE122FFB80C0009CE59 /* FilterService.swift in Sources */,
 				3FE02CDF22FF5FDF0009CE59 /* PhotoCollectionViewCell.swift in Sources */,
 				3FE02CDD22FF5A0F0009CE59 /* PhotosVC.swift in Sources */,
 				3FEC266222F639F500266E7D /* AppDelegate.swift in Sources */,
+				3F3B7D962307EB2F00468C83 /* TaskListViewController.swift in Sources */,
+				3F3B7D982307EF2400468C83 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

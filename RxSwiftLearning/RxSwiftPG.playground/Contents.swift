@@ -122,9 +122,62 @@ strike.onNext("3")// Only called here
 strike.onNext("4")
 strike.onNext("5")
 
-//Filter
+print("---FILTER---")
 Observable.of(1,2,3,4,76,77).filter {
     $0 % 2 == 0
 }.subscribe(onNext: {
     print($0)
     }).disposed(by: bag)
+
+//Skip
+print("---SKIP---")
+Observable.of(1,2,3,4,76,77).skip(2).subscribe(onNext: {
+print($0)
+}).disposed(by: bag)
+
+//Skip While
+print("---SKIP WHILE---")
+Observable.of(1,2,44,4,76,77).skipWhile {$0 < 7 }.subscribe(onNext: {
+print($0)//skips 1,2
+}).disposed(by: bag)
+
+print("---SKIP UNTIL---")
+//Waits for a trigger
+
+let untilSubject = PublishSubject<String>()
+let trigger = PublishSubject<String>()
+
+untilSubject.skipUntil(trigger).subscribe(onNext: {
+    print($0)
+    }).disposed(by: bag)
+
+untilSubject.onNext("A")
+untilSubject.onNext("B")
+trigger.onNext("X")
+untilSubject.onNext("C")//only prints this because its after trigger
+
+print("---TAKE---")
+//take first n items
+
+Observable.of(1,2,3,4,5,6).take(3).subscribe(onNext: {
+print($0)
+}).disposed(by: bag)
+
+print("---TAKE WHILE---")
+
+Observable.of(8,2,3,4,5,6).takeWhile{return $0 % 2 == 0}.subscribe(onNext: {
+print($0)
+}).disposed(by: bag)//prints 8,2
+
+print("---TAKE UNTIL---")
+let takeUntilSubject = PublishSubject<String>()
+let newTrigger = PublishSubject<String>()
+
+takeUntilSubject.takeUntil(newTrigger).subscribe(onNext: {
+    print($0)
+    }).disposed(by: bag)
+
+takeUntilSubject.onNext("A")
+takeUntilSubject.onNext("B")//prints A,B
+newTrigger.onNext("X")
+takeUntilSubject.onNext("C")
